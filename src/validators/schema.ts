@@ -29,6 +29,15 @@ export const schemaRegisterPerson = yup.object().shape({
   country: yup.string().required("Campo obrigatório"),
 });
 
+export const schemaRegisterBuilding = yup.object().shape({
+  name: yup.string().required("Campo obrigatório"),
+  type: yup.string().required("Campo obrigatório"),
+  floors: yup.string().required("Campo obrigatório"),
+  logo: yup.string().required("Campo obrigatório"),
+  apartments_per_floor: yup.string().required("Campo obrigatório"),
+  apartments_available: yup.string().required("Campo obrigatório"),
+});
+
 export const schemaLogin = yup.object().shape({
   email: yup.string().email().required("Campo obrigatório"),
   password: yup.string().required("Campo obrigatório"),
