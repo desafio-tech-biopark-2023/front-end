@@ -75,3 +75,8 @@ export interface ILegalPerson {
   incorporation_date: string;
   regime_type: string;
 }
+
+export interface ILogin {
+  email: string;
+  password: string;
+}

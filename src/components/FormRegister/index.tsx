@@ -82,30 +82,43 @@ const FormRegister = () => {
 
         <FormGroup>
           <Label>Nome</Label>
-          <Input
+          <input
+            className="form-control"
             placeholder="Digite seu nome"
             {...register("name")}
-            error={errors.name}
           />
         </FormGroup>
         <FormGroup>
           <Label>Email</Label>
-          <Input placeholder="Digite seu email" {...register("email")} />
+          <input
+            className="form-control"
+            placeholder="Digite seu email"
+            {...register("email")}
+          />
         </FormGroup>
 
         <FormGroup>
           <Label>Telefone</Label>
-          <Input placeholder="Digite seu telefone" {...register("telephone")} />
+          <input
+            className="form-control"
+            placeholder="Digite seu telefone"
+            {...register("telephone")}
+          />
         </FormGroup>
 
         <FormGroup>
           <Label>Senha</Label>
-          <Input placeholder="Digite sua senha" {...register("password")} />
+          <input
+            className="form-control"
+            placeholder="Digite sua senha"
+            {...register("password")}
+          />
         </FormGroup>
 
         <FormGroup>
           <Label>Confirmar Senha</Label>
-          <Input
+          <input
+            className="form-control"
             placeholder="Confirme sua senha"
             {...register("confirmPassword")}
           />
@@ -113,21 +126,24 @@ const FormRegister = () => {
 
         <FormGroup>
           <Label for="exampleAddress">Logradouro</Label>
-          <Input
+          <input
+            className="form-control"
             placeholder="Digite seu endereço"
             {...register("public_place")}
           />
         </FormGroup>
         <FormGroup>
           <Label for="exampleAddress">Numero</Label>
-          <Input
+          <input
+            className="form-control"
             placeholder="Digite o número da sua residência"
             {...register("number")}
           />
         </FormGroup>
         <FormGroup>
           <Label for="exampleAddress2">Complemento</Label>
-          <Input
+          <input
+            className="form-control"
             placeholder="Complemento do endereço"
             {...register("complement")}
           />
@@ -135,27 +151,47 @@ const FormRegister = () => {
 
         <FormGroup>
           <Label for="exampleCity">Bairro</Label>
-          <Input placeholder="Digite o Bairro" {...register("district")} />
+          <input
+            className="form-control"
+            placeholder="Digite o Bairro"
+            {...register("district")}
+          />
         </FormGroup>
 
         <FormGroup>
           <Label for="exampleCity">Cidade</Label>
-          <Input placeholder="Digite a cidade" {...register("city")} />
+          <input
+            className="form-control"
+            placeholder="Digite a cidade"
+            {...register("city")}
+          />
         </FormGroup>
 
         <FormGroup>
           <Label for="exampleState">Estado</Label>
-          <Input placeholder="Digite o estado" {...register("state")} />
+          <input
+            className="form-control"
+            placeholder="Digite o estado"
+            {...register("state")}
+          />
         </FormGroup>
 
         <FormGroup>
           <Label for="exampleZip">Cep</Label>
-          <Input placeholder="Digite o cep" {...register("zip_code")} />
+          <input
+            className="form-control"
+            placeholder="Digite o cep"
+            {...register("zip_code")}
+          />
         </FormGroup>
 
         <FormGroup>
           <Label for="exampleZip">País</Label>
-          <Input placeholder="Digite o país" {...register("country")} />
+          <input
+            className="form-control"
+            placeholder="Digite o país"
+            {...register("country")}
+          />
         </FormGroup>
 
         <FormGroup switch>
@@ -174,17 +210,26 @@ const FormRegister = () => {
           <>
             <FormGroup>
               <Label for="exampleZip">RG</Label>
-              <Input placeholder="Digite o RG" {...register("rg")} />
+              <input
+                className="form-control"
+                placeholder="Digite o RG"
+                {...register("rg")}
+              />
             </FormGroup>
 
             <FormGroup>
               <Label for="exampleZip">CPF</Label>
-              <Input placeholder="Digite o CPF" {...register("cpf")} />
+              <input
+                className="form-control"
+                placeholder="Digite o CPF"
+                {...register("cpf")}
+              />
             </FormGroup>
 
             <FormGroup>
               <Label for="exampleZip">Data de Nascimento</Label>
-              <Input
+              <input
+                className="form-control"
                 placeholder="Digite a data de nascimento"
                 {...register("birth_date")}
               />
@@ -222,7 +267,8 @@ const FormRegister = () => {
 
             <FormGroup>
               <Label for="exampleZip">Profissão</Label>
-              <Input
+              <input
+                className="form-control"
                 placeholder="Digite sua senha"
                 {...register("occupation")}
               />
@@ -230,12 +276,17 @@ const FormRegister = () => {
 
             <FormGroup>
               <Label for="exampleZip">Renda</Label>
-              <Input placeholder="Digite sua senha" {...register("income")} />
+              <input
+                className="form-control"
+                placeholder="Digite sua senha"
+                {...register("income")}
+              />
             </FormGroup>
 
             <FormGroup>
               <Label for="exampleZip">Estado Civil</Label>
-              <Input
+              <input
+                className="form-control"
                 placeholder="Digite sua senha"
                 {...register("marital_status")}
               />
@@ -243,7 +294,8 @@ const FormRegister = () => {
 
             <FormGroup>
               <Label for="exampleZip">Nacionalidade</Label>
-              <Input
+              <input
+                className="form-control"
                 placeholder="Digite sua senha"
                 {...register("nationality")}
               />
@@ -267,12 +319,17 @@ const FormRegister = () => {
           <>
             <FormGroup>
               <Label for="exampleZip">CNPJ</Label>
-              <Input placeholder="Digite sua senha" {...register("cnpj")} />
+              <input
+                className="form-control"
+                placeholder="Digite sua senha"
+                {...register("cnpj")}
+              />
             </FormGroup>
 
             <FormGroup>
               <Label for="exampleZip">Nome Fantasia</Label>
-              <Input
+              <input
+                className="form-control"
                 placeholder="Digite sua senha"
                 {...register("fantasy_name")}
               />
@@ -280,7 +337,8 @@ const FormRegister = () => {
 
             <FormGroup>
               <Label for="exampleZip">Registro</Label>
-              <Input
+              <input
+                className="form-control"
                 placeholder="Digite sua senha"
                 {...register("registration")}
               />
@@ -288,7 +346,8 @@ const FormRegister = () => {
 
             <FormGroup>
               <Label for="exampleZip">Data de incorporação</Label>
-              <Input
+              <input
+                className="form-control"
                 placeholder="Digite sua senha"
                 {...register("incorporation_date")}
               />
@@ -296,7 +355,8 @@ const FormRegister = () => {
 
             <FormGroup>
               <Label for="exampleZip">Tipo de regime</Label>
-              <Input
+              <input
+                className="form-control"
                 placeholder="Digite sua senha"
                 {...register("regime_type")}
               />
