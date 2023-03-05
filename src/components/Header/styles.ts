@@ -5,6 +5,7 @@ const HeaderComponent = styled.header`
   align-items: center;
   justify-content: center;
   width: 100%;
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.55);
 `;
 
 const NavbarDesktop = styled.div`
