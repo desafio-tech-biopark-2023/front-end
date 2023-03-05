@@ -53,6 +53,7 @@ const NavbarDesktop = styled.div`
 
 const NavbarMobile = styled.div`
   width: 100%;
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.55);
 
   .navbar {
     width: 100%;
@@ -76,7 +77,7 @@ const NavbarMobile = styled.div`
     border-radius: 50%;
   }
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 769px) {
     display: none;
   }
 `;
