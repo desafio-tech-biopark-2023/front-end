@@ -6,7 +6,7 @@ const FormComponent = styled.div`
   align-items: center;
   justify-content: center;
   width: 90%;
-  height: 100%;
+  /* height: 100%; */
   padding: 10px;
   /* max-width: 500px; */
 
