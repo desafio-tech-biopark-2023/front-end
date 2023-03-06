@@ -37,16 +37,13 @@ const Header = () => {
                 <NavLink href="#">Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#">Alugar</NavLink>
-              </NavItem>
-              <NavItem>
                 <NavLink href="#">Imóveis</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#">Área Locador</NavLink>
+                <NavLink href="#">Locador</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#">Área Locatário</NavLink>
+                <NavLink href="#">Locatário</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="#">Sobre</NavLink>
@@ -67,16 +64,13 @@ const Header = () => {
                   <NavLink href="#">Home</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="#">Alugar</NavLink>
-                </NavItem>
-                <NavItem>
                   <NavLink href="#">Imóveis</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="#">Área Locador</NavLink>
+                  <NavLink href="#">Locador</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="#">Área Locatário</NavLink>
+                  <NavLink href="#">Locatário</NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink href="#">Sobre</NavLink>

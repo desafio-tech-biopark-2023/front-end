@@ -36,9 +36,6 @@ const FormRegisterBuildingComponent = styled.div`
       background-color: #273c4e;
     }
   }
-
-  @media only screen and (min-width: 768px) {
-  }
 `;
 
 export { FormRegisterBuildingComponent };

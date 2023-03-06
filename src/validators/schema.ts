@@ -3,8 +3,8 @@ import * as yup from "yup";
 export const schemaRegisterPerson = yup.object().shape({
   name: yup.string().required("Campo obrigatório"),
   email: yup.string().email("Email invalido").required("Campo obrigatório"),
-  legalPerson: yup.boolean().required("Campo obrigatório"),
-  naturalPerson: yup.boolean().required("Campo obrigatório"),
+  legalPerson: yup.string().notRequired().nullable(),
+  naturalPerson: yup.string().notRequired().nullable(),
   password: yup
     .string()
     .required("Campo obrigatório")
@@ -18,7 +18,7 @@ export const schemaRegisterPerson = yup.object().shape({
     .required("Campo obrigatório")
     .oneOf([yup.ref("password")], "Senhas não são iguais"),
   telephone: yup.string().required("Campo obrigatório"),
-  type: yup.string().required("Campo obrigatório"),
+  type: yup.string().notRequired(),
   public_place: yup.string().required("Campo obrigatório"),
   number: yup.string().required("Campo obrigatório"),
   zip_code: yup.string().required("Campo obrigatório"),
@@ -27,6 +27,20 @@ export const schemaRegisterPerson = yup.object().shape({
   city: yup.string().required("Campo obrigatório"),
   state: yup.string().required("Campo obrigatório"),
   country: yup.string().required("Campo obrigatório"),
+  rg: yup.string().notRequired().nullable(),
+  cpf: yup.string().notRequired().nullable(),
+  birth_date: yup.string().notRequired().nullable(),
+  gender: yup.string().notRequired().nullable(),
+  ethnicity: yup.string().notRequired().nullable(),
+  occupation: yup.string().notRequired().nullable(),
+  income: yup.string().notRequired().nullable(),
+  marital_status: yup.string().notRequired().nullable(),
+  nationality: yup.string().notRequired().nullable(),
+  cnpj: yup.string().notRequired().nullable(),
+  fantasy_name: yup.string().notRequired().nullable(),
+  registration: yup.string().notRequired().nullable(),
+  incorporation_date: yup.string().notRequired().nullable(),
+  regime_type: yup.string().notRequired().nullable(),
 });
 
 export const schemaRegisterBuilding = yup.object().shape({

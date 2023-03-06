@@ -11,6 +11,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { IBuilding } from "../../interfaces/building";
 import { schemaRegisterBuilding } from "../../validators/schema";
+import { ToastContainer } from "react-toastify";
 
 const FormRegisterBuilding = () => {
   const {
@@ -90,6 +91,18 @@ const FormRegisterBuilding = () => {
 
         <Button type="submit">Cadastrar</Button>
       </Form>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </FormRegisterBuildingComponent>
   );
 };

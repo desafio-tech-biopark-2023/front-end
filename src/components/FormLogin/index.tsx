@@ -1,6 +1,8 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
+import { ToastContainer } from "react-toastify";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
+import { useSessionContext } from "../../contexts/sessionContext";
 import { ILogin } from "../../interfaces/person";
 import { schemaLogin } from "../../validators/schema";
 import { FormComponent } from "./style";
@@ -13,9 +15,7 @@ const FormLogin = () => {
     formState: { errors },
   } = useForm<ILogin>({ resolver: yupResolver(schemaLogin) });
 
-  const login = (data: ILogin) => {
-    console.log(data);
-  };
+  const { login } = useSessionContext();
 
   return (
     <FormComponent>
@@ -40,6 +40,18 @@ const FormLogin = () => {
 
         <Button type="submit">Enviar</Button>
       </Form>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </FormComponent>
   );
 };
