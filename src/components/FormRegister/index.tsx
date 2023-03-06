@@ -12,6 +12,7 @@ import { useForm } from "react-hook-form";
 import { IDataPerson, IPerson } from "../../interfaces/person";
 import { schemaRegisterPerson } from "../../validators/schema";
 import { useState } from "react";
+import { useRegisterContext } from "../../contexts/registerContext";
 
 const FormRegister = () => {
   const [naturalState, setNaturalState] = useState(true);
@@ -24,56 +25,7 @@ const FormRegister = () => {
     formState: { errors },
   } = useForm<IDataPerson>({ resolver: yupResolver(schemaRegisterPerson) });
 
-  const registerFunction = (data: IDataPerson) => {
-    console.log(data);
-    const address = {
-      public_place: data.public_place,
-      number: data.number,
-      zip_code: data.zip_code,
-      complement: data.complement,
-      district: data.district,
-      city: data.city,
-      state: data.state,
-      country: data.country,
-    };
-
-    const newPerson: IPerson = {
-      name: data.name,
-      email: data.email,
-      legalPerson: data.legalPerson,
-      naturalPerson: data.naturalPerson,
-      password: data.password,
-      telephone: data.telephone,
-      type: data.type,
-      address: address,
-    };
-
-    if (data.legalPerson) {
-      newPerson.legal_person = {
-        cnpj: data.cnpj,
-        fantasy_name: data.fantasy_name,
-        incorporation_date: data.incorporation_date,
-        regime_type: data.regime_type,
-        registration: data.registration,
-      };
-    }
-
-    if (data.naturalPerson) {
-      newPerson.natural_person = {
-        birth_date: data.birth_date,
-        cpf: data.cpf,
-        ethnicity: data.ethnicity,
-        gender: data.gender,
-        income: data.income,
-        marital_status: data.marital_status,
-        nationality: data.nationality,
-        occupation: data.occupation,
-        rg: data.rg,
-      };
-    }
-
-    console.log(newPerson);
-  };
+  const { registerFunction } = useRegisterContext();
 
   return (
     <FormRegisterComponent>
@@ -87,6 +39,7 @@ const FormRegister = () => {
             placeholder="Digite seu nome"
             {...register("name")}
           />
+          {errors.name && <span>{errors.name.message}</span>}
         </FormGroup>
         <FormGroup>
           <Label>Email</Label>
@@ -95,6 +48,7 @@ const FormRegister = () => {
             placeholder="Digite seu email"
             {...register("email")}
           />
+          {errors.email && <span>{errors.email.message}</span>}
         </FormGroup>
 
         <FormGroup>
@@ -104,6 +58,7 @@ const FormRegister = () => {
             placeholder="Digite seu telefone"
             {...register("telephone")}
           />
+          {errors.telephone && <span>{errors.telephone.message}</span>}
         </FormGroup>
 
         <FormGroup>

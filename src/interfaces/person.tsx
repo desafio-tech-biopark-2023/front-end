@@ -1,3 +1,9 @@
+import { ReactNode } from "react";
+
+export interface IAuthProvider {
+  children: ReactNode;
+}
+
 export interface IDataPerson {
   name: string;
   email: string;
@@ -29,6 +35,7 @@ export interface IDataPerson {
   income: string;
   marital_status: string;
   nationality: string;
+  children: JSX.Element[];
 }
 
 export interface IPerson {
