@@ -11,7 +11,6 @@ const CardApartment = ({
   floor,
   number,
   private_area,
-  suites,
   total_area,
   type,
   vacancies,
@@ -19,7 +18,6 @@ const CardApartment = ({
   building,
   value_rent,
   person,
-  buildings,
   id,
 }: IApartment) => {
   const navigate = useNavigate();

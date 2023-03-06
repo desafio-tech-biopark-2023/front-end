@@ -1,6 +1,5 @@
 import { AxiosError, AxiosResponse } from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
 import { IApartment, IRent, IRentApartment } from "../interfaces/apartment";
 import { IBuilding } from "../interfaces/building";
 import { IAuthProvider } from "../interfaces/person";
@@ -27,7 +26,6 @@ const MainProvider = ({ children }: IAuthProvider) => {
       .get("/rents")
       .then((response: AxiosResponse) => {
         if (response.status === 200) {
-          console.log(response.data);
           setListRents(response.data);
         }
       })
@@ -39,10 +37,6 @@ const MainProvider = ({ children }: IAuthProvider) => {
       .get("/apartments")
       .then((response: AxiosResponse) => {
         if (response.status === 200) {
-          console.log(response.data);
-          const availableApartments = response.data.filter(
-            (apartment: IApartment) => apartment.available === "Sim"
-          );
           setListApartments(response.data);
         }
       })
@@ -54,7 +48,6 @@ const MainProvider = ({ children }: IAuthProvider) => {
       .get("/buildings")
       .then((response: AxiosResponse) => {
         if (response.status === 200) {
-          console.log(response.data);
           setListBuildings(response.data);
         }
       })

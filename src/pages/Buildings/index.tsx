@@ -1,13 +1,12 @@
 import { CardApartment } from "../../components/CardApartment";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
-
 import { useMainContext } from "../../contexts/mainContext";
 import { IApartment, IRent } from "../../interfaces/apartment";
 import { BuildingsPage, ContainerBuilding } from "./style";
 
 const Buildings = () => {
-  const { listApartments, listRents } = useMainContext();
+  const { listApartments } = useMainContext();
 
   return (
     <BuildingsPage>

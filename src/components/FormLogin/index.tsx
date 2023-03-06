@@ -16,8 +16,6 @@ const FormLogin = () => {
     formState: { errors },
   } = useForm<ILogin>({ resolver: yupResolver(schemaLogin) });
 
-  const navigate = useNavigate();
-
   const { login } = useSessionContext();
 
   return (

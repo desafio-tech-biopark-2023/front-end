@@ -47,7 +47,6 @@ const FormRegisterComponent = styled.div`
       align-items: flex-start;
       justify-content: space-between;
       background-color: var(--grey10);
-      /* padding: 10px; */
       gap: 10px;
       width: 100%;
       box-shadow: rgb(0 0 0 / 10%) 0px 3px 15px 0px;
