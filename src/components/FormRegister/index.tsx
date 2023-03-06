@@ -6,6 +6,7 @@ import { IDataPerson } from "../../interfaces/person";
 import { schemaRegisterPerson } from "../../validators/schema";
 import { useRegisterContext } from "../../contexts/registerContext";
 import { AxiosError, AxiosResponse } from "axios";
+import { ToastContainer } from "react-toastify";
 
 const FormRegister = () => {
   const {
@@ -383,6 +384,18 @@ const FormRegister = () => {
 
         <Button type="submit">Cadastrar</Button>
       </Form>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </FormRegisterComponent>
   );
 };
