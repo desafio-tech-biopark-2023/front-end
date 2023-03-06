@@ -6,9 +6,7 @@ const FormComponent = styled.div`
   align-items: center;
   justify-content: center;
   width: 90%;
-  /* height: 100%; */
   padding: 10px;
-  /* max-width: 500px; */
 
   form {
     display: flex;
@@ -23,8 +21,6 @@ const FormComponent = styled.div`
     border-radius: 8px 16px;
 
     h2 {
-      /* font-family: var(--heading-font-family); */
-      /* font-weight: var(--heading-3-500); */
       font-size: 24px;
       color: #000000;
       margin-bottom: 20px;

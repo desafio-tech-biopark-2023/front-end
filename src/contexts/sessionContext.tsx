@@ -16,7 +16,6 @@ const SessionProvider = ({ children }: IAuthProvider) => {
   const navigate = useNavigate();
 
   const login = (data: ILogin) => {
-    console.log(data);
     api
       .post("/login", {
         email: data.email,
@@ -25,7 +24,6 @@ const SessionProvider = ({ children }: IAuthProvider) => {
       .then((response: AxiosResponse) => {
         if (response.status === 200) {
           const { token } = response.data;
-          console.log(token);
           localStorage.setItem("@TOKEN", token);
           toast.success("Login realizado com sucesso", {
             onClose: () => navigate("/home"),

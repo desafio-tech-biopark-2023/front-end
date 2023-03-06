@@ -4,13 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { IApartment } from "../interfaces/apartment";
 import { IBuilding } from "../interfaces/building";
-import {
-  IAuthProvider,
-  IDataPerson,
-  IdataPersonPartial,
-  ILogin,
-  IPerson,
-} from "../interfaces/person";
+import { IAuthProvider, IDataPerson, IPerson } from "../interfaces/person";
 import api from "../services/api";
 
 interface IRegisterProvider {
@@ -80,8 +74,7 @@ const RegisterProvider = ({ children }: IAuthProvider) => {
     api
       .post("/persons", newPerson)
       .then((response: AxiosResponse) => {
-        console.log(response.data);
-        if (response.status === 200) {
+        if (response.status === 201) {
           toast.success("Cadastro realizado com sucesso", {
             onClose: () => navigate("/home"),
           });
@@ -93,8 +86,6 @@ const RegisterProvider = ({ children }: IAuthProvider) => {
   };
 
   const registerBuildingFunction = (data: IBuilding) => {
-    console.log(data);
-
     const newBuilding: IBuilding = {
       ...data,
     };
@@ -113,13 +104,9 @@ const RegisterProvider = ({ children }: IAuthProvider) => {
       .catch((err: AxiosError) => {
         console.log(err);
       });
-
-    console.log(newBuilding);
   };
 
   const registerApartmentFunction = (data: IApartment) => {
-    console.log(data);
-
     const newApartment: IApartment = {
       ...data,
     };
@@ -138,8 +125,6 @@ const RegisterProvider = ({ children }: IAuthProvider) => {
       .catch((err: AxiosError) => {
         console.log(err);
       });
-
-    console.log(newApartment);
   };
 
   return (

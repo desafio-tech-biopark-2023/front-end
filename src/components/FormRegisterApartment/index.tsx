@@ -1,11 +1,4 @@
-import {
-  Button,
-  Form,
-  FormFeedback,
-  FormGroup,
-  Input,
-  Label,
-} from "reactstrap";
+import { Button, Form, FormGroup, Label } from "reactstrap";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { FormRegisterApartmentDiv } from "./style";

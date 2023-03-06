@@ -26,7 +26,6 @@ const Rent = () => {
     resolver: yupResolver(schemaRent),
   });
 
-  console.log(id);
   const { listApartments } = useMainContext();
 
   const apartmentToRent = listApartments.find(
@@ -34,8 +33,6 @@ const Rent = () => {
   );
 
   const rentApartmentFunction = (data: IRent) => {
-    console.log(data);
-
     const dateACtual = () => {
       const data = new Date();
       const dia = String(data.getDate()).padStart(2, "0");
@@ -50,8 +47,6 @@ const Rent = () => {
       date_end_rent: data.date_end_rent,
     };
 
-    // const timesRent = {};
-
     const token = localStorage.getItem("@TOKEN");
 
     api.defaults.headers.common.authorization = `Bearer ${token}`;
@@ -59,9 +54,14 @@ const Rent = () => {
     api
       .post(`/rents/${apartmentToRent?.id}`, newRent)
       .then((response: AxiosResponse) => {
-        toast.success("Login realizado com sucesso", {
-          onClose: () => navigate("/buildings"),
-        });
+        if (response.status === 201) {
+          toast.success("Login realizado com sucesso", {
+            onClose: () => navigate("/buildings"),
+          });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
 

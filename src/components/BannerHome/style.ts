@@ -9,8 +9,6 @@ const BannerHomeDiv = styled.div`
 
   .card {
     width: 100%;
-
-    /* max-height: 400px; */
     background-color: #c0c0c073;
 
     img {
@@ -18,12 +16,6 @@ const BannerHomeDiv = styled.div`
       object-fit: cover;
     }
   }
-
-  /* @media only screen and (min-width: 768px) {
-    .card {
-      padding: 0px 150px;
-    }
-  } */
 `;
 
 export { BannerHomeDiv };
