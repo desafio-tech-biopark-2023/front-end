@@ -1,9 +1,10 @@
 import { AxiosError, AxiosResponse } from "axios";
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   IAuthProvider,
   IDataPerson,
+  IdataPersonPartial,
   ILogin,
   IPerson,
 } from "../interfaces/person";
@@ -11,12 +12,18 @@ import api from "../services/api";
 
 interface IRegisterProvider {
   registerFunction: (data: IDataPerson) => void;
+  naturalState: boolean;
+  setNaturalState: (value: boolean) => void;
+  legalState: boolean;
+  setLegalState: (value: boolean) => void;
 }
 
 export const RegisterContext = createContext({} as IRegisterProvider);
 
 const RegisterProvider = ({ children }: IAuthProvider) => {
   const navigate = useNavigate();
+  const [naturalState, setNaturalState] = useState(false);
+  const [legalState, setLegalState] = useState(false);
 
   const registerFunction = (data: IDataPerson) => {
     console.log(data);
@@ -34,15 +41,15 @@ const RegisterProvider = ({ children }: IAuthProvider) => {
     const newPerson: IPerson = {
       name: data.name,
       email: data.email,
-      legalPerson: data.legalPerson,
-      naturalPerson: data.naturalPerson,
+      legalPerson: legalState,
+      naturalPerson: naturalState,
       password: data.password,
       telephone: data.telephone,
       type: data.type,
       address: address,
     };
 
-    if (data.legalPerson) {
+    if (legalState) {
       newPerson.legal_person = {
         cnpj: data.cnpj,
         fantasy_name: data.fantasy_name,
@@ -52,7 +59,7 @@ const RegisterProvider = ({ children }: IAuthProvider) => {
       };
     }
 
-    if (data.naturalPerson) {
+    if (naturalState) {
       newPerson.natural_person = {
         birth_date: data.birth_date,
         cpf: data.cpf,
@@ -79,7 +86,15 @@ const RegisterProvider = ({ children }: IAuthProvider) => {
   };
 
   return (
-    <RegisterContext.Provider value={{ registerFunction }}>
+    <RegisterContext.Provider
+      value={{
+        registerFunction,
+        naturalState,
+        legalState,
+        setLegalState,
+        setNaturalState,
+      }}
+    >
       {children}
     </RegisterContext.Provider>
   );

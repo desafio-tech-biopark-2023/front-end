@@ -4,11 +4,28 @@ export interface IAuthProvider {
   children: ReactNode;
 }
 
+export interface IdataPersonPartial {
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword?: string;
+  telephone: string;
+  type: string;
+  public_place: string;
+  number: string;
+  zip_code: string;
+  complement: string;
+  district: string;
+  city: string;
+  state: string;
+  country: string;
+}
+
 export interface IDataPerson {
   name: string;
   email: string;
-  legalPerson: boolean;
-  naturalPerson: boolean;
+  legalPerson: string;
+  naturalPerson: string;
   password: string;
   confirmPassword?: string;
   telephone: string;
