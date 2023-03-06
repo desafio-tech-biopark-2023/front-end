@@ -31,11 +31,35 @@ const FormComponent = styled.div`
     }
 
     .mb-3 {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
       width: 100%;
     }
 
     button {
       background-color: #273c4e;
+    }
+    .error {
+      color: red;
+    }
+
+    .cadastrar {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: flex-end;
+      gap: 10px;
+
+      a {
+        text-decoration: none;
+        color: #273c4e;
+      }
+
+      a:hover {
+        text-decoration: underline;
+        color: #000000;
+      }
     }
   }
 `;

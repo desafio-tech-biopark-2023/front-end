@@ -34,19 +34,19 @@ const Header = () => {
 
             <Nav navbar>
               <NavItem>
-                <NavLink href="#">Home</NavLink>
+                <NavLink href="/home">Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#">Imóveis</NavLink>
+                <NavLink href="/buildings">Imóveis</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#">Locador</NavLink>
+                <NavLink href="/register">Cadastro</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#">Locatário</NavLink>
+                <NavLink href="/login">Login</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#">Sobre</NavLink>
+                <NavLink href="/">Sobre</NavLink>
               </NavItem>
             </Nav>
           </Navbar>
@@ -61,19 +61,19 @@ const Header = () => {
             <Collapse isOpen={!collapsed} navbar>
               <Nav navbar>
                 <NavItem>
-                  <NavLink href="#">Home</NavLink>
+                  <NavLink href="/home">Home</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="#">Imóveis</NavLink>
+                  <NavLink href="/buildings">Imóveis</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="#">Locador</NavLink>
+                  <NavLink href="/register">Cadastro</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="#">Locatário</NavLink>
+                  <NavLink href="/login">Login</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="#">Sobre</NavLink>
+                  <NavLink href="/">Sobre</NavLink>
                 </NavItem>
               </Nav>
             </Collapse>
