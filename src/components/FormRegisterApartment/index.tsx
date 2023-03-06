@@ -11,6 +11,7 @@ import { useForm } from "react-hook-form";
 import { FormRegisterApartmentDiv } from "./style";
 import { IApartment } from "../../interfaces/apartment";
 import { schemaRegisterApartment } from "../../validators/schema";
+import { ToastContainer } from "react-toastify";
 
 const FormRegisterApartment = () => {
   const {
@@ -135,6 +136,18 @@ const FormRegisterApartment = () => {
 
         <Button type="submit">Cadastrar</Button>
       </Form>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </FormRegisterApartmentDiv>
   );
 };
