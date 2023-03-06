@@ -5,6 +5,7 @@ import { Register } from "../pages/Register";
 import { RegisterBuilding } from "../pages/RegisterBuilding";
 import { RegisterApartment } from "../pages/RegisterApartment";
 import { Buildings } from "../pages/Buildings";
+import { Rent } from "../pages/Rent";
 
 const RoutesMain = () => {
   return (
@@ -16,6 +17,7 @@ const RoutesMain = () => {
       <Route path="/building" element={<RegisterBuilding />} />
       <Route path="/apartment" element={<RegisterApartment />} />
       <Route path="/buildings" element={<Buildings />} />
+      <Route path="/:id" element={<Rent />} />
     </Routes>
   );
 };
