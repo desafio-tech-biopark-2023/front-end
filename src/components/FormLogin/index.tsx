@@ -1,5 +1,6 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
+import { ToastContainer } from "react-toastify";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 import { useSessionContext } from "../../contexts/sessionContext";
 import { ILogin } from "../../interfaces/person";
@@ -39,6 +40,18 @@ const FormLogin = () => {
 
         <Button type="submit">Enviar</Button>
       </Form>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </FormComponent>
   );
 };

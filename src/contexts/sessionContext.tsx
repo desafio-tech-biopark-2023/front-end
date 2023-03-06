@@ -3,6 +3,8 @@ import { createContext, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { IAuthProvider, ILogin } from "../interfaces/person";
 import api from "../services/api";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface ISessionProvider {
   login: (data: ILogin) => void;
@@ -25,7 +27,9 @@ const SessionProvider = ({ children }: IAuthProvider) => {
           const { token } = response.data;
           console.log(token);
           localStorage.setItem("@TOKEN", token);
-          navigate("/home");
+          toast.success("Login realizado com sucesso", {
+            onClose: () => navigate("/home"),
+          });
         }
       })
       .catch((err: AxiosError) => {

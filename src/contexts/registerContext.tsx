@@ -1,6 +1,7 @@
 import { AxiosError, AxiosResponse } from "axios";
 import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import {
   IAuthProvider,
   IDataPerson,
@@ -26,7 +27,6 @@ const RegisterProvider = ({ children }: IAuthProvider) => {
   const [legalState, setLegalState] = useState(false);
 
   const registerFunction = (data: IDataPerson) => {
-    console.log(data);
     const address = {
       public_place: data.public_place,
       number: data.number,
@@ -77,12 +77,15 @@ const RegisterProvider = ({ children }: IAuthProvider) => {
       .post("/persons", newPerson)
       .then((response: AxiosResponse) => {
         console.log(response.data);
+        if (response.status === 200) {
+          toast.success("Cadastro realizado com sucesso", {
+            onClose: () => navigate("/home"),
+          });
+        }
       })
       .catch((err: AxiosError) => {
         console.log(err);
       });
-
-    console.log(newPerson);
   };
 
   return (
