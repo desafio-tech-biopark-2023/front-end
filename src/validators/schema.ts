@@ -76,3 +76,8 @@ export const schemaLogin = yup.object().shape({
   // .matches(/(\W)|_/, "deve conter ao menos 1 caracter especial")
   // .matches(/.{8,}/, "deve conter ao menos 8 dígitos"),
 });
+
+export const schemaRent = yup.object().shape({
+  id: yup.string().notRequired(),
+  date_end_rent: yup.string().required("Campo obrigatório"),
+});

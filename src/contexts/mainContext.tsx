@@ -1,7 +1,7 @@
 import { AxiosError, AxiosResponse } from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { IApartment, IRent } from "../interfaces/apartment";
+import { useNavigate, useParams } from "react-router-dom";
+import { IApartment, IRent, IRentApartment } from "../interfaces/apartment";
 import { IBuilding } from "../interfaces/building";
 import { IAuthProvider } from "../interfaces/person";
 import api from "../services/api";

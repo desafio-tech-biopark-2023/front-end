@@ -2,6 +2,7 @@ import { IBuilding } from "./building";
 import { IPerson } from "./person";
 
 export interface IApartment {
+  id?: string;
   buildings: string;
   type: string;
   floor: string;
@@ -31,9 +32,15 @@ export interface IPersonRent {
 }
 
 export interface IRent {
-  monthly_rent_value: string;
+  id?: string;
+  monthly_rent_value?: string;
+  date_start_rent?: string;
+  date_end_rent: string;
+  apartment?: IApartment;
+  person?: IPersonRent;
+}
+
+export interface IRentApartment {
   date_start_rent: string;
   date_end_rent: string;
-  apartment: IApartment;
-  person: IPersonRent;
 }
