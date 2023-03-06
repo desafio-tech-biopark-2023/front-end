@@ -12,6 +12,7 @@ import { useForm } from "react-hook-form";
 import { IBuilding } from "../../interfaces/building";
 import { schemaRegisterBuilding } from "../../validators/schema";
 import { ToastContainer } from "react-toastify";
+import { useRegisterContext } from "../../contexts/registerContext";
 
 const FormRegisterBuilding = () => {
   const {
@@ -21,15 +22,7 @@ const FormRegisterBuilding = () => {
     formState: { errors },
   } = useForm<IBuilding>({ resolver: yupResolver(schemaRegisterBuilding) });
 
-  const registerBuildingFunction = (data: IBuilding) => {
-    console.log(data);
-
-    const newBuilding: IBuilding = {
-      ...data,
-    };
-
-    console.log(newBuilding);
-  };
+  const { registerBuildingFunction } = useRegisterContext();
 
   return (
     <FormRegisterBuildingComponent>
@@ -42,6 +35,7 @@ const FormRegisterBuilding = () => {
             placeholder="Nome do Edifício"
             {...register("name")}
           />
+          {errors.name && <span>{errors.name.message}</span>}
         </FormGroup>
 
         <FormGroup>
@@ -51,6 +45,7 @@ const FormRegisterBuilding = () => {
             placeholder="Imagem do Edifício"
             {...register("logo")}
           />
+          {errors.logo && <span>{errors.logo.message}</span>}
         </FormGroup>
 
         <FormGroup>
@@ -60,6 +55,7 @@ const FormRegisterBuilding = () => {
             placeholder="Tipo do Edifício"
             {...register("type")}
           />
+          {errors.type && <span>{errors.type.message}</span>}
         </FormGroup>
 
         <FormGroup>
@@ -69,6 +65,7 @@ const FormRegisterBuilding = () => {
             placeholder="Quantidade de Andares"
             {...register("floors")}
           />
+          {errors.floors && <span>{errors.floors.message}</span>}
         </FormGroup>
 
         <FormGroup>
@@ -78,6 +75,9 @@ const FormRegisterBuilding = () => {
             placeholder="Apartamentos por andar"
             {...register("apartments_per_floor")}
           />
+          {errors.apartments_per_floor && (
+            <span>{errors.apartments_per_floor.message}</span>
+          )}
         </FormGroup>
 
         <FormGroup>
@@ -87,6 +87,9 @@ const FormRegisterBuilding = () => {
             placeholder="Quantidade Apartamentos disponíveis"
             {...register("apartments_available")}
           />
+          {errors.apartments_available && (
+            <span>{errors.apartments_available.message}</span>
+          )}
         </FormGroup>
 
         <Button type="submit">Cadastrar</Button>

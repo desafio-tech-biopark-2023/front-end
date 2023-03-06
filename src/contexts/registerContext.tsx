@@ -2,6 +2,8 @@ import { AxiosError, AxiosResponse } from "axios";
 import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { IApartment } from "../interfaces/apartment";
+import { IBuilding } from "../interfaces/building";
 import {
   IAuthProvider,
   IDataPerson,
@@ -17,6 +19,8 @@ interface IRegisterProvider {
   setNaturalState: (value: boolean) => void;
   legalState: boolean;
   setLegalState: (value: boolean) => void;
+  registerBuildingFunction: (data: IBuilding) => void;
+  registerApartmentFunction: (data: IApartment) => void;
 }
 
 export const RegisterContext = createContext({} as IRegisterProvider);
@@ -88,6 +92,56 @@ const RegisterProvider = ({ children }: IAuthProvider) => {
       });
   };
 
+  const registerBuildingFunction = (data: IBuilding) => {
+    console.log(data);
+
+    const newBuilding: IBuilding = {
+      ...data,
+    };
+    const token = localStorage.getItem("@TOKEN");
+
+    api.defaults.headers.common.authorization = `Bearer ${token}`;
+
+    api
+      .post("/buildings", newBuilding)
+      .then((response: AxiosResponse) => {
+        console.log(response);
+        if (response.status === 201) {
+          toast.success("Edifício cadastrado!");
+        }
+      })
+      .catch((err: AxiosError) => {
+        console.log(err);
+      });
+
+    console.log(newBuilding);
+  };
+
+  const registerApartmentFunction = (data: IApartment) => {
+    console.log(data);
+
+    const newApartment: IApartment = {
+      ...data,
+    };
+    const token = localStorage.getItem("@TOKEN");
+
+    api.defaults.headers.common.authorization = `Bearer ${token}`;
+
+    api
+      .post(`/apartments/${data.buildings}`, newApartment)
+      .then((response: AxiosResponse) => {
+        console.log(response);
+        if (response.status === 201) {
+          toast.success("Apartamento cadastrado!");
+        }
+      })
+      .catch((err: AxiosError) => {
+        console.log(err);
+      });
+
+    console.log(newApartment);
+  };
+
   return (
     <RegisterContext.Provider
       value={{
@@ -96,6 +150,8 @@ const RegisterProvider = ({ children }: IAuthProvider) => {
         legalState,
         setLegalState,
         setNaturalState,
+        registerBuildingFunction,
+        registerApartmentFunction,
       }}
     >
       {children}

@@ -42,6 +42,11 @@ const NavbarDesktop = styled.div`
           font-family: "Roboto", sans-serif;
           color: black;
         }
+
+        .nav-link:hover {
+          color: #0a58ca;
+          text-decoration: underline;
+        }
       }
     }
   }

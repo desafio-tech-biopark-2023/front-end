@@ -53,7 +53,8 @@ export const schemaRegisterBuilding = yup.object().shape({
 });
 
 export const schemaRegisterApartment = yup.object().shape({
-  type: yup.string().required("Campo obrigatório"),
+  buildings: yup.string().required("Campo Obrigatório"),
+  type: yup.string().required("Campo Obrigatório"),
   floor: yup.string().required("Campo obrigatório"),
   number: yup.string().required("Campo obrigatório"),
   dorms: yup.string().required("Campo obrigatório"),

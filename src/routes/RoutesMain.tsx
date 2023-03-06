@@ -4,6 +4,7 @@ import { Login } from "../pages/Login";
 import { Register } from "../pages/Register";
 import { RegisterBuilding } from "../pages/RegisterBuilding";
 import { RegisterApartment } from "../pages/RegisterApartment";
+import { Buildings } from "../pages/Buildings";
 
 const RoutesMain = () => {
   return (
@@ -14,6 +15,7 @@ const RoutesMain = () => {
       <Route path="/home" element={<Home />} />
       <Route path="/building" element={<RegisterBuilding />} />
       <Route path="/apartment" element={<RegisterApartment />} />
+      <Route path="/buildings" element={<Buildings />} />
     </Routes>
   );
 };
